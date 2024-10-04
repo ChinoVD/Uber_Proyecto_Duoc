@@ -1,0 +1,57 @@
+.contenedor {
+    height: 100vh; 
+    background-image: url('/assets/img/background-uber-login.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+  }
+  
+  .iniciar_sesion {
+    text-align: center; 
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    width: 65%;
+    color: #ffffff;
+    padding: 10px 20px 0px 20px;
+  }
+  
+  .titulo {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem; 
+    color: #ffff;
+  }
+  
+  .registros {
+    color: #ffff;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+  }
+
+  ion-input {
+    --border-color: #ffffff;
+    --ion-color-primary: #ffffff; 
+    
+
+  }
+
+  .CC {
+    color: #ffffff;
+  }
+
+  .custom-input::part(native) {
+    border-color: #ffffff;
+    --highlight-color: #ffffff; 
+  }
+  
+  ion-button{
+    margin: 20px;
+  }
+  
+  
+  

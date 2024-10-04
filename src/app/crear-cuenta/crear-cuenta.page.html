@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <div class="logo">
+      <!-- Aquí puedes agregar el logo si es necesario -->
+    </div>
+
+    <div class="iniciar_sesion">
+      <!-- Título de la página -->
+      <div class="titulo">
+        Registro
+      </div>
+
+      <!-- Campos de entrada para el usuario y la contraseña -->
+      <div class="registros">
+        <ion-input 
+       
+        [(ngModel)]="usuario"
+        fill="outline" 
+        label="Usuario"
+        labelPlacement="floating"
+        [clearInput]="true"
+        placeholder="Nombre de Usuario"
+        
+        id="usuarioInput" (blur)="animarError('usuarioInput')">
+      </ion-input>
+      
+      <ion-input 
+        
+        [(ngModel)]="password"
+        fill="outline" 
+        label="Contraseña"
+        labelPlacement="floating"
+        [clearInput]="true"
+        placeholder="Ingrese su Contraseña"
+        id="passwordInput" (blur)="animarError('passwordInput')">
+        
+        
+      </ion-input>
+
+      <ion-input 
+        
+        [(ngModel)]="v_password"
+        fill="outline" 
+        label="Contraseña"
+        labelPlacement="floating"
+        [clearInput]="true"
+        placeholder="Reingrese su Contraseña"
+        id="passwordInput" (blur)="animarError('passwordInput')">
+        
+        
+      </ion-input>
+      </div>      
+
+      <!-- Botón para iniciar sesión -->
+      <ion-button (click)="login()">
+        Ingresar
+      </ion-button>
+      
+    </div> <!-- Aquí cierra el div "iniciar_sesion" -->
+    
+  </div> <!-- Aquí cierra el div "contenedor" -->
+</ion-content>

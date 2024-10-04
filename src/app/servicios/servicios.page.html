@@ -1,0 +1,64 @@
+<ion-content [fullscreen]="true">
+  <div class="servicios-contenedor">
+
+    <div class="info-servicios">
+      <h1>Opciones</h1>
+      <p>Viaja a cualquier otro lugar y obtén de todo</p>
+    </div>
+
+    <div class="calabazauwu">
+      <ion-icon class="calabaza" src="assets/icon/calabaza.svg" (click)="mostrarImagen()"></ion-icon>
+      <ion-icon id="fantasma1" class="fantasma" src="assets/icon/fantasma.svg"></ion-icon>
+      <ion-icon id="fantasma2" class="fantasma" src="assets/icon/fantasma.svg"></ion-icon>
+      <ion-icon id="fantasma3" class="fantasma" src="assets/icon/fantasma.svg"></ion-icon>
+      
+      <ion-icon id="fantasma" class="imagen-container fantasma" src="assets/icon/fantasma.svg" *ngIf="imagenVisible"></ion-icon>
+    </div>
+
+    <div class="servicios-disponibles">
+      <div class="servicio-elemento servicio-1">
+        <ion-icon class="viaje-1" src="assets/icon/vehiculo-viajes.svg"></ion-icon>
+        <p class="">Viaje</p>
+      </div>
+
+      <div class="servicio-elemento servicio-2">
+        <ion-icon class="alimento-1" src="assets/icon/ensalada.svg"></ion-icon>
+        <p>Alimentos</p>
+      </div>
+
+      <div class="servicio-elemento servicio-3">
+        <ion-icon class="reserva-1" src="assets/icon/calendario.svg"></ion-icon>
+        <p>Reserve</p>
+      </div>
+
+      <div class="servicio-elemento servicio-4">
+        <ion-icon class="teens-1" src="assets/icon/niños.svg"></ion-icon>
+        <p>Teens</p>
+      </div>
+
+      <div class="servicio-elemento servicio-5">
+        <ion-icon class="transito-1" src="assets/icon/vehiculo-viajes.svg"></ion-icon>
+        <p>Transito</p>
+      </div>
+    </div>
+
+    <div class="servicios-extras">
+      <div class="titulo">
+        <h1>Encarga cualquier actividad</h1>
+      </div>
+    
+      <div class="extras-contenedor">
+        <div class="servicio-extra extra-1">
+          <ion-icon class="icono-2" src="assets/icon/paquete.svg"></ion-icon>
+          <p>Envíos</p>
+        </div>
+        
+        <div class="servicio-extra extra-2">
+          <ion-icon class="icono-2" src="assets/icon/paquete.svg"></ion-icon>
+          <p>Encargo</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

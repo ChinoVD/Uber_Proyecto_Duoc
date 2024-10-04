@@ -1,0 +1,125 @@
+ion-content {
+    --background:#161616;
+  }
+.contenedor {
+    margin: 20px;
+}
+
+h2, p {
+    margin: 10px 0;
+    color: var(--color-letras-iconos);
+}
+
+.inf-usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.usuario-img {
+    font-size: 3rem;
+    padding: 10px;
+    background-color: var(--color-letras-iconos);
+    border-radius: 50%;
+}
+
+.opciones-usuario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    margin-bottom: 30px;
+}
+
+.opciones-elementos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--fondo-secundario); 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.ayuda {
+    grid-column: 1; 
+}
+
+.pago {
+    grid-column: 2; 
+}
+
+.actividad {
+    grid-column: 3; 
+}
+
+.icono-opciones {
+    font-size: 2rem;
+}
+
+.inf-adicional {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+}
+
+.inf-elemento {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: var(--fondo-secundario); 
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px; 
+}
+
+.icono-inf {
+    font-size: 4rem; 
+    width: 20%; 
+}
+
+.texto-inf {
+    width: 70%; 
+}
+
+.inf-usuario h1 {
+    color: var(--color-letras-iconos); 
+}
+
+.opciones-elementos h2 {
+    color: var(--color-letras-iconos);
+}
+
+.inf-adicional h2, .inf-adicional p {
+    color: var(--color-letras-iconos); 
+}
+
+.icono-opciones, .icono-inf {
+    color: var(--color-letras-iconos); 
+}
+
+.ajustes {
+    width: 100%;
+    background-color: var(--fondo-oscuro);
+    color: var(--color-letras-iconos);
+    padding: 16px; 
+  
+    .ajustes-elementos {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      background-color: var(--fondo-secundario);
+      padding: 8px;
+      border-radius: 8px; 
+  
+      ion-button {
+        --background: var(--fondo-terciario);
+        --color: var(--color-letras-iconos);
+        width: 100%;
+      }
+    }
+  }
+  

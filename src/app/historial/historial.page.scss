@@ -1,0 +1,82 @@
+ion-content {
+    --background: var(--fondo-oscuro);
+}
+
+.historial-contenedor {
+    margin: 10px 20px;
+    color: var(--color-letras-iconos); 
+}
+
+.subtitulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-letras-iconos); 
+}
+
+.ultimo-viaje {
+    padding: 10px;
+    border: 1px solid var(--color-letras-iconos); 
+    background-color: var(--fondo-oscuro); 
+    height: 320px;
+    border-radius: 5%;
+}
+
+.viaje-mapa {
+    width: 100%;
+    height: auto;
+}
+
+ion-icon {
+    font-size: 4rem;
+    margin-right: 5px;
+    color: var(--color-letras-iconos); 
+}
+
+.historial-contenido {
+    margin-bottom: 30px;
+}
+
+.historial-elemento {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--fondo-oscuro);
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--color-letras-iconos); 
+}
+
+.historial-informacion {
+    display: flex;
+    flex-direction: column;
+}
+
+.historial-informacion p {
+    margin: 3px;
+    color: var(--color-letras-iconos); 
+}
+
+.ajustes {
+    font-size: 2rem;
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--fondo-terciario); 
+    border-radius: 50px;
+}
+
+.vehiculo {
+    padding: 5px;
+    background-color: var(--fondo-terciario); 
+    margin: 5px;
+    border-radius: 5%;
+}
+
+ion-chip {
+    background-color: var(--fondo-terciario);
+    color: var(--color-letras-iconos); 
+}
+
+h1, h2, h3, p {
+    color: var(--color-letras-iconos); 
+}

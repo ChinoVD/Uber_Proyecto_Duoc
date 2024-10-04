@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <div class="logo">
+      <!-- Debo poner un icono si estamamos necesarios -->
+    </div>
+
+    <div class="iniciar_sesion">
+      
+      <div class="titulo">
+        Iniciar sesión
+      </div>
+
+      
+      <div class="registros">
+        <ion-input 
+       
+        [(ngModel)]="usuario"
+        fill="outline" 
+        label="Usuario"
+        labelPlacement="floating"
+        [clearInput]="true"
+        placeholder="Ingrese su Usuario"
+        
+        id="usuarioInput" (blur)="animarError('usuarioInput')">
+      </ion-input>
+      
+      <ion-input 
+        
+        [(ngModel)]="password"
+        fill="outline" 
+        label="Contraseña"
+        labelPlacement="floating"
+        [clearInput]="true"
+        placeholder="Ingrese su Contraseña"
+        id="passwordInput" (blur)="animarError('passwordInput')">
+        
+      </ion-input>
+      </div> 
+
+      
+      <ion-button (click)="registro_usuario()" class="CC" fill="clear">
+        ¿No tienes una cuenta?
+      </ion-button>
+
+      
+      <ion-button (click)="login()">
+        Ingresar
+      </ion-button>
+      
+    </div> 
+    
+  </div> 
+</ion-content>

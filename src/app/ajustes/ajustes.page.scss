@@ -1,0 +1,44 @@
+ion-content {
+    --background: var(--fondo-oscuro);
+}
+
+.settings-content {
+    --background: var(--fondo-secundario);
+    padding: 16px;
+
+    ion-card {
+        margin: 16px 0;
+        --background: var(--fondo-oscuro);
+        --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    ion-card-header {
+        background: var(--fondo-oscuro);
+        color: var(--color-letras-iconos);
+    }
+
+    ion-card-title {
+        font-size: 18px;
+        font-weight: bold;
+        --color: var(--color-letras-iconos);
+        --background: var(--fondo-oscuro);
+    }
+
+    ion-card-content {
+        text-align: center;
+       
+        background: var(--fondo-oscuro);
+    }
+
+    ion-icon {
+        font-size: 24px;
+        color: var(--color-letras-iconos);
+        cursor: pointer;
+    }
+
+    ion-icon:hover {
+        color: #ffffff;
+    }
+}

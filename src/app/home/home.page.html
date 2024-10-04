@@ -1,20 +1,226 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="contenedor">
+    <!-- Contenedor para los botones de selección -->
+    <div class="botones">
+      <ion-segment [(ngModel)]="selector">
+        <!-- Segmento de selección para "Viajes" y "Delivery" -->
+        <ion-segment-button value="viajes">
+          <div>
+            <ion-icon src="/assets/icon/vehiculo-viajes.svg"></ion-icon>
+            <p>Viajes</p>
+          </div>
+        </ion-segment-button>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <ion-segment-button value="delivery">
+          <div>
+            <ion-icon class="delivery" src="/assets/icon/ramen-delivery.svg"></ion-icon>
+            <p>Uber Eats</p>
+          </div>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- Contenido mostrado cuando se selecciona "Viajes" -->
+    <div *ngIf="selector === 'viajes'">
+      <div class="contenido-sugerencias">
+        <div class="barra-busqueda">
+          <ion-searchbar placeholder="¿A dónde vas?"></ion-searchbar>
+        </div>
+
+        <p class="titulos">Sugerencias</p>
+
+        <div class="sugerencias">
+          <div class="sugerencias-contenedor">
+            <ion-icon class="sugerencias-icono-auto" src="/assets/icon/vehiculo-viajes.svg"></ion-icon>
+            <p>Viajes</p>
+          </div>
+          
+          <div class="sugerencias-contenedor">
+            <ion-icon class="sugerencias-icono" src="/assets/icon/calendario.svg"></ion-icon>
+            <p>Reserve</p>
+          </div> 
+
+          <div class="sugerencias-contenedor">
+            <ion-icon class="sugerencias-icono" src="/assets/icon/niños.svg"></ion-icon>
+            <p>Teens</p>
+          </div>
+
+          <div class="sugerencias-contenedor">
+            <ion-icon class="sugerencias-icono" src="/assets/icon/paquete.svg"></ion-icon>
+            <p>Envíos</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor para scroll horizontal (Uber-ahorro) -->
+      <p class="titulos">Ahorra a diario</p>
+      <div class="contenido-uber-ahorro">
+        <div class="contenedor-uber-ahorro">
+          <div class="scroll-horizontal">
+            <div class="elemento">
+              <ion-card>
+                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                <ion-card-header>
+                  <ion-card-title>Vehiculos Seguros</ion-card-title>
+                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </div>
+
+            <div class="elemento">
+              <ion-card>
+                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                <ion-card-header>
+                  <ion-card-title>Vehiculos Seguros</ion-card-title>
+                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </div>
+
+            <div class="elemento">
+              <ion-card>
+                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                <ion-card-header>
+                  <ion-card-title>Vehiculos Seguros</ion-card-title>
+                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </div>
+
+            <div class="elemento">
+              <ion-card>
+                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                <ion-card-header>
+                  <ion-card-title>Vehiculos Seguros</ion-card-title>
+                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de "Viajes más simples" -->
+      <div class="viajes-mas-simples">
+        <p class="titulos">Viajes más simples</p>
+        <div class="contenido-uber-ahorro">
+          <div class="contenedor-uber-ahorro">
+            <div class="scroll-horizontal">
+              <div class="elemento">
+                <ion-card>
+                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                  <ion-card-header>
+                    <ion-card-title>Vehiculos Seguros</ion-card-title>
+                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+
+              <div class="elemento">
+                <ion-card>
+                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                  <ion-card-header>
+                    <ion-card-title>Vehiculos Seguros</ion-card-title>
+                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+
+              <div class="elemento">
+                <ion-card>
+                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                  <ion-card-header>
+                    <ion-card-title>Vehiculos Seguros</ion-card-title>
+                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+
+              <div class="elemento">
+                <ion-card>
+                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                  <ion-card-header>
+                    <ion-card-title>Vehiculos Seguros</ion-card-title>
+                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido mostrado cuando se selecciona "Delivery" -->
+    <div *ngIf="selector === 'delivery'">
+      <div class="barra-busqueda-eats">
+        <ion-searchbar placeholder="Busca en Uber Eats"></ion-searchbar>
+      </div>
+
+      <div class="contenedor-uber-eats">
+        <div class="uber-eats-categorias">
+          <div class="scroll-horizontal">
+            <div class="eats-elemento">
+              <ion-icon src="assets/icon/tienda.svg"></ion-icon>
+              <p>Locales</p>
+            </div>
+
+            <div class="eats-elemento">
+              <ion-icon src="assets/icon/tienda.svg"></ion-icon>
+              <p>Locales</p>
+            </div>
+
+            <div class="eats-elemento">
+              <ion-icon src="assets/icon/tienda.svg"></ion-icon>
+              <p>Locales</p>
+            </div>
+
+            <div class="eats-elemento">
+              <ion-icon src="assets/icon/tienda.svg"></ion-icon>
+              <p>Locales</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="uber-eats-etiquetas">
+          <ion-chip>Ofertas</ion-chip>
+          <ion-chip>Menos de 30 min</ion-chip>
+          <ion-chip>Costos</ion-chip>
+        </div>
+
+        <div class="uber-eats-descuentos">
+
+          <div class="scroll-horizontal">
+            <div class="tarjeta">
+              <div class="contenido">
+                <h2>Sin costo de envío y hasta un 5% de ahorro con Uber One</h2>
+                <button>Prueba sin costo...</button>
+              </div>
+              <div class="contenedor-imagen">
+                <img src="assets/img/burguer.png" alt="Hamburguesa">
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="contenido">
+                <h2>Sin costo de envío y hasta un 5% de ahorro con Uber One</h2>
+                <button>Prueba sin costo...</button>
+              </div>
+              <div class="contenedor-imagen">
+                <img src="assets/img/burguer.png" alt="Hamburguesa">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="uber-eats-tiendas">
+          <ion-icon class="icono-tienda" src="assets/icon/tienda-cerrada.svg"></ion-icon>
+          <p>Lo sentimos, no hay tiendas disponibles en este momento</p>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
 </ion-content>

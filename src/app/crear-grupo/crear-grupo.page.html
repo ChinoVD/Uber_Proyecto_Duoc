@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear Grupo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nombre del Grupo</ion-label>
+    <ion-input [(ngModel)]="nombreGrupo" type="text"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="full" (click)="crearGrupo()">
+    Crear Grupo
+  </ion-button>
+</ion-content>
