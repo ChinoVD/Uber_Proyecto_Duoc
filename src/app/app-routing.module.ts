@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'crear-grupo',
     loadChildren: () => import('./crear-grupo/crear-grupo.module').then( m => m.CrearGrupoPageModule)
   },
+  {
+    path: 'view-admin',
+    loadChildren: () => import('./view-admin/view-admin.module').then(m => m.ViewAdminPageModule) // Asegúrate de que esté correcto
+  },
 ];
 
 @NgModule({

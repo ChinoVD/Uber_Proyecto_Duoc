@@ -2,7 +2,7 @@
   <div class="contenedor">
     <!-- Contenedor para los botones de selección -->
     <div class="botones">
-      <ion-segment [(ngModel)]="selector">
+      <ion-segment [(ngModel)]="selector"  (ionChange)="onSegmentChange($event)">
         <!-- Segmento de selección para "Viajes" y "Delivery" -->
         <ion-segment-button value="viajes">
           <div>
@@ -57,6 +57,17 @@
       <div class="contenido-uber-ahorro">
         <div class="contenedor-uber-ahorro">
           <div class="scroll-horizontal">
+
+            <div class="elemento" *ngFor="let producto of productos">
+              <ion-card>
+                <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
+                <ion-card-header>
+                  <ion-card-title>{{ producto.nombre }}</ion-card-title>
+                  <ion-card-subtitle>{{ producto.descripcion }}</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </div>
+            
             <div class="elemento">
               <ion-card>
                 <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
@@ -67,35 +78,6 @@
               </ion-card>
             </div>
 
-            <div class="elemento">
-              <ion-card>
-                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
-                <ion-card-header>
-                  <ion-card-title>Vehiculos Seguros</ion-card-title>
-                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            </div>
-
-            <div class="elemento">
-              <ion-card>
-                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
-                <ion-card-header>
-                  <ion-card-title>Vehiculos Seguros</ion-card-title>
-                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            </div>
-
-            <div class="elemento">
-              <ion-card>
-                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
-                <ion-card-header>
-                  <ion-card-title>Vehiculos Seguros</ion-card-title>
-                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            </div>
           </div>
         </div>
       </div>
@@ -106,26 +88,7 @@
         <div class="contenido-uber-ahorro">
           <div class="contenedor-uber-ahorro">
             <div class="scroll-horizontal">
-              <div class="elemento">
-                <ion-card>
-                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
-                  <ion-card-header>
-                    <ion-card-title>Vehiculos Seguros</ion-card-title>
-                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
-                  </ion-card-header>
-                </ion-card>
-              </div>
-
-              <div class="elemento">
-                <ion-card>
-                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
-                  <ion-card-header>
-                    <ion-card-title>Vehiculos Seguros</ion-card-title>
-                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
-                  </ion-card-header>
-                </ion-card>
-              </div>
-
+              
               <div class="elemento">
                 <ion-card>
                   <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />

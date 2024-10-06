@@ -18,6 +18,15 @@ export class ApiRestService {
     return this.http.delete(`${this.baseUrl}/grupos.php?nombre=${nombre}`);
   }
 
+  // Nuevo método para subir imágenes
+  subirImagen(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('imagen', file);
+    
+    // Cambia la URL según sea necesario
+    return this.http.post(`${this.baseUrl}/subir-imagen.php`, formData); 
+  }
+
   agregarProducto(producto: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/productos.php`, producto);
   }

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administrar Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="subirProducto()">
+    <ion-item>
+      <ion-label position="floating">Producto/Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="producto" name="producto" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Detalle/Descripción</ion-label>
+      <ion-input type="text" [(ngModel)]="detalle" name="detalle" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="precio" name="precio" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>URL de la Imagen</ion-label>
+      <ion-input type="text" [(ngModel)]="imageUrl" name="imageUrl" placeholder="Ingresa la URL de la imagen" required></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="imageUrl">
+      <ion-label>Vista Previa</ion-label>
+      <img [src]="imageUrl" alt="Vista Previa de la Imagen" style="max-width: 100%; height: auto;" />
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Categoría (opcional)</ion-label>
+      <ion-input type="text" [(ngModel)]="categoria" name="categoria"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Subir Producto</ion-button>
+  </form>
+</ion-content>
