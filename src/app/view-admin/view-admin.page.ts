@@ -7,36 +7,31 @@ import { ApiRestService } from '../Servicios_Internos/Api/api-rest.service';
   styleUrls: ['./view-admin.page.scss'],
 })
 export class ViewAdminPage {
+  productos: any[] = []; // Si deseas mostrar productos en esta página
   producto: string = '';
   detalle: string = '';
   precio: number | null = null;
-  imageUrl: string = ''; // Para la URL de la imagen
-  categoria: string = ''; // Deja esto vacío si no quieres usar categorías
-  grupo: string = 'NOMBREGRUPO'; // Cambia esto según tu necesidad
+  imageUrl: string = '';
+  categoria: string = '';
+  grupo: string = 'Chino_Claudio';
 
   constructor(private api: ApiRestService) {}
 
-  // Método para establecer la URL de la imagen
-  setImageUrl(url: string) {
-    this.imageUrl = url;
-  }
-
+  // Método para subir un producto
   subirProducto() {
     if (this.imageUrl && this.producto && this.detalle && this.precio !== null) {
       const formData = {
         producto: this.producto,
         detalle: this.detalle,
-        precio: this.precio || '',
-        imagen: this.imageUrl, // Usar directamente la URL de la imagen
-        categoria: this.categoria || '', // Si no se proporciona, se deja vacío
-        grupo: this.grupo || '' // Igual aquí
+        precio: this.precio,
+        imagen: this.imageUrl,
+        categoria: this.categoria || '',
+        grupo: this.grupo || ''
       };
 
-      // Ahora llamamos a la API para agregar el producto
       this.api.agregarProducto(formData).subscribe(
         response => {
           console.log('Producto subido con éxito:', response);
-          // Reseteamos el formulario
           this.resetForm();
         },
         error => {
@@ -52,7 +47,9 @@ export class ViewAdminPage {
     this.producto = '';
     this.detalle = '';
     this.precio = null;
-    this.imageUrl = ''; // Restablecer la URL de la imagen
+    this.imageUrl = '';
     this.categoria = '';
   }
+
+  // Aquí puedes agregar métodos para modificar y eliminar productos si es necesario
 }
