@@ -18,10 +18,10 @@ export class HomePage implements OnInit {
   }
 
   obtenerProductos(grupo: string) {
-    this.api.traerProductosPorGrupo(grupo).subscribe(
+    this.api.traerProductosPorGrupo(this.grupo).subscribe(
       (data: any) => {
-        console.log('Respuesta de la API:', data); // Agregar esta línea
-        this.productos = Array.isArray(data) ? data : []; // Asegúrate de que sea un array
+        console.log('Respuesta de la API:', data); // Agregar esta línea para depurar
+        this.productos = Array.isArray(data) ? data : []; // Asegurarse de que la respuesta sea un array
       },
       (error) => {
         console.error('Error al obtener productos:', error); // Manejo de errores

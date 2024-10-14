@@ -5,7 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="subirProducto()">
+  <!-- Menú desplegable de opciones -->
+  <ion-segment [(ngModel)]="opcionSeleccionada">
+    <ion-segment-button value="subir">
+      <ion-label>Subir Producto</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="modificar">
+      <ion-label>Modificar Producto</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="eliminar">
+      <ion-label>Eliminar Producto</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Formulario para subir producto -->
+  <form *ngIf="opcionSeleccionada === 'subir'" (ngSubmit)="subirProducto()">
     <ion-item>
       <ion-label position="floating">Producto/Nombre</ion-label>
       <ion-input type="text" [(ngModel)]="producto" name="producto" required></ion-input>
@@ -38,4 +52,62 @@
 
     <ion-button expand="full" type="submit">Subir Producto</ion-button>
   </form>
+
+  <!-- Formulario para modificar producto -->
+  <form *ngIf="opcionSeleccionada === 'modificar'" (ngSubmit)="editarProducto()">
+    <ion-item>
+      <ion-label position="floating">ID del Producto</ion-label>
+      <ion-input type="text" [(ngModel)]="idProducto" name="idProducto" placeholder="Ingresa el ID del producto" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nuevo Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="producto" name="producto" placeholder="Ingresa el nuevo nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nueva Descripción</ion-label>
+      <ion-input type="text" [(ngModel)]="detalle" name="detalle" placeholder="Ingresa la nueva descripción"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nuevo Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="precio" name="precio" placeholder="Ingresa el nuevo precio"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Nueva URL de la Imagen</ion-label>
+      <ion-input type="text" [(ngModel)]="imageUrl" name="imageUrl" placeholder="Ingresa la nueva URL de la imagen"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="imageUrl">
+      <ion-label>Vista Previa</ion-label>
+      <img [src]="imageUrl" alt="Vista Previa de la Imagen" style="max-width: 100%; height: auto;" />
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Modificar Producto</ion-button>
+  </form>
+
+  <!-- Formulario para eliminar producto -->
+  <form *ngIf="opcionSeleccionada === 'eliminar'" (ngSubmit)="eliminarProducto()">
+    <ion-item>
+      <ion-label position="floating">ID del Producto a Eliminar</ion-label>
+      <ion-input type="text" [(ngModel)]="idProductoEliminar" name="idProductoEliminar" placeholder="Ingresa el ID del producto a eliminar" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="danger" type="submit">Eliminar Producto</ion-button>
+  </form>
+
+   <!-- Lista de productos -->
+   <ion-list *ngIf="opcionSeleccionada === 'eliminar' && productos.length > 0">
+    <ion-list-header>
+      <ion-label>Productos Disponibles</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>ID: {{ producto.id }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
