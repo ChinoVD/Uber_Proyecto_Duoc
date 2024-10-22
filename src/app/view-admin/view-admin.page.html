@@ -46,8 +46,12 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Categoría (opcional)</ion-label>
-      <ion-input type="text" [(ngModel)]="categoria" name="categoria"></ion-input>
+      <ion-label>Categoría (opcional)</ion-label>
+      <ion-select [(ngModel)]="categoria" name="categoria" placeholder="Selecciona una categoría">
+        <ion-select-option value="ahorro a diario">ahorro a diario</ion-select-option>
+        <ion-select-option value="Viajes más simples">Viajes más simples</ion-select-option>
+        <ion-select-option value="tarjeta-eats">tarjeta-eats</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-button expand="full" type="submit">Subir Producto</ion-button>

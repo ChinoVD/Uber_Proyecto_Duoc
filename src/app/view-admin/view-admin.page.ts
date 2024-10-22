@@ -54,11 +54,12 @@ export class ViewAdminPage implements OnInit {
         categoria: this.categoria || '',
         grupo: this.grupo || ''
       };
-
+  
       this.api.agregarProducto(formData).subscribe(
         response => {
           console.log('Producto subido con éxito:', response);
           this.resetForm();
+          this.obtenerProductos(this.grupo);  // Actualiza la lista de productos
         },
         error => {
           console.error('Error al subir el producto:', error);

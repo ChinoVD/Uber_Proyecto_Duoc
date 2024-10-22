@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <div class="logo">
+      <!-- Aquí puedes agregar un logo si es necesario -->
+    </div>
+
+    <div class="recuperar_contrasena">
+      <div class="titulo">
+        Recuperar Contraseña
+      </div>
+
+      <div class="registros">
+        <ion-input 
+          [(ngModel)]="nombre"
+          fill="outline" 
+          label="Nombre del Usuario"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su Nombre"
+          id="nombreInput">
+        </ion-input>
+      </div>
+
+      <div class="registros">
+        <ion-input 
+          [(ngModel)]="email"
+          fill="outline" 
+          label="Correo Electrónico"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su Correo"
+          type="email"
+          id="emailInput">
+        </ion-input>
+      </div> 
+
+      <div class="registros">
+        <ion-input 
+          [(ngModel)]="password"
+          fill="outline" 
+          label="contraseña"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su nueva contraseña"
+          type="password"
+          id="passwordInpunt">
+        </ion-input>
+      </div> 
+
+      <ion-button (click)="enviarSolicitudRecuperacion()">
+        Enviar
+      </ion-button>
+      
+      <ion-button (click)="volverAlLogin()" fill="clear" color="medium">
+        Volver al Inicio de Sesión
+      </ion-button>
+    </div> <!-- Cierra div recuperar_contrasena -->
+  </div> <!-- Cierra div contenedor -->
+</ion-content>

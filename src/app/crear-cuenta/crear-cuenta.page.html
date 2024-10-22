@@ -10,52 +10,55 @@
         Registro
       </div>
 
-      <!-- Campos de entrada para el usuario y la contraseña -->
+      <!-- Campos de entrada para el usuario, contraseña y correo -->
       <div class="registros">
         <ion-input 
-       
-        [(ngModel)]="usuario"
-        fill="outline" 
-        label="Usuario"
-        labelPlacement="floating"
-        [clearInput]="true"
-        placeholder="Nombre de Usuario"
-        
-        id="usuarioInput" (blur)="animarError('usuarioInput')">
-      </ion-input>
-      
-      <ion-input 
-        
-        [(ngModel)]="password"
-        fill="outline" 
-        label="Contraseña"
-        labelPlacement="floating"
-        [clearInput]="true"
-        placeholder="Ingrese su Contraseña"
-        id="passwordInput" (blur)="animarError('passwordInput')">
-        
-        
-      </ion-input>
+          [(ngModel)]="nuevoUsuario"
+          fill="outline" 
+          label="Usuario"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Nombre de Usuario"
+          id="usuarioInput">
+        </ion-input>
 
-      <ion-input 
-        
-        [(ngModel)]="v_password"
-        fill="outline" 
-        label="Contraseña"
-        labelPlacement="floating"
-        [clearInput]="true"
-        placeholder="Reingrese su Contraseña"
-        id="passwordInput" (blur)="animarError('passwordInput')">
-        
-        
-      </ion-input>
-      </div>      
+        <ion-input 
+          [(ngModel)]="nuevaPassword"
+          fill="outline" 
+          label="Contraseña"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su Contraseña"
+          id="passwordInput">
+        </ion-input>
 
-      <!-- Botón para iniciar sesión -->
-      <ion-button (click)="login()">
-        Ingresar
+        <ion-input 
+          [(ngModel)]="v_password"
+          fill="outline" 
+          label="Reingrese Contraseña"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Reingrese su Contraseña"
+          id="v_passwordInput">
+        </ion-input>
+
+        <!-- Nuevo campo de correo electrónico -->
+        <ion-input 
+          [(ngModel)]="email"
+          fill="outline" 
+          label="Correo Electrónico"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su Correo Electrónico"
+          id="emailInput">
+        </ion-input>
+      </div>
+
+      <!-- Botón para registrar usuario -->
+      <ion-button (click)="registrarUsuario()">
+        Registrar
       </ion-button>
-      
+
     </div> <!-- Aquí cierra el div "iniciar_sesion" -->
     
   </div> <!-- Aquí cierra el div "contenedor" -->

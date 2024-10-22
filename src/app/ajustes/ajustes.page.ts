@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ajustes',
   templateUrl: './ajustes.page.html',
-  styleUrls: ['./ajustes.page.scss'],
 })
-export class AjustesPage implements OnInit {
+export class AjustesPage {
+  isModalOpen = false;
 
-  constructor() { }
-
-  ngOnInit() {
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
   }
-
 }

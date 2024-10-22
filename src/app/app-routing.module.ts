@@ -42,7 +42,11 @@ const routes: Routes = [
   {
     path: 'view-admin',
     loadChildren: () => import('./view-admin/view-admin.module').then(m => m.ViewAdminPageModule) // Asegúrate de que esté correcto
+  },  {
+    path: 'recuperar-contra',
+    loadChildren: () => import('./recuperar-contra/recuperar-contra.module').then( m => m.RecuperarContraPageModule)
   },
+
 ];
 
 @NgModule({
