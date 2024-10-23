@@ -9,19 +9,73 @@
   
   <ion-modal [isOpen]="isModalOpen">
     <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Configuración Cuenta</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <p>
-          ola
-        </p>
-      </ion-content>
+     
+        <!-- Campo Nombre -->
+      <ion-item>
+        <ion-input
+          label="Nombre"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Ingrese su nombre"
+          [(ngModel)]="name"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Campo Apellido -->
+      <ion-item>
+        <ion-input
+          label="Apellido"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Ingrese su apellido"
+          [(ngModel)]="surname"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Campo Correo -->
+      <ion-item>
+        <ion-input
+          label="Correo Electrónico"
+          labelPlacement="stacked"
+          type="email"
+          placeholder="Ingrese su correo"
+          [(ngModel)]="email"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Campo Contraseña -->
+      <ion-item>
+        <ion-input
+          label="Contraseña"
+          labelPlacement="stacked"
+          type="password"
+          placeholder="Ingrese su contraseña"
+          [(ngModel)]="password"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Campo Dirección -->
+      <ion-item>
+        <ion-input
+          label="Dirección"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Ingrese su dirección"
+          [(ngModel)]="address"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Campo Tarjeta de Crédito -->
+      <ion-item>
+        <ion-input
+          label="Tarjeta de Crédito"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Ingrese su tarjeta de crédito"
+          [(ngModel)]="creditCard"
+        ></ion-input>
+      </ion-item>
+     
     </ng-template>
   </ion-modal>
 </ion-content>
