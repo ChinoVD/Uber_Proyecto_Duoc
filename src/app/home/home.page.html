@@ -89,22 +89,22 @@
           <div class="contenedor-uber-ahorro">
             <div class="scroll-horizontal">
               
-              <div class="elemento">
+              <div class="elemento" *ngFor="let producto of productos">
                 <ion-card>
-                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                  <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
                   <ion-card-header>
-                    <ion-card-title>Vehiculos Seguros</ion-card-title>
-                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                    <ion-card-title>{{ producto.nombre }}</ion-card-title>
+                    <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
                   </ion-card-header>
                 </ion-card>
               </div>
 
-              <div class="elemento">
+              <div class="elemento" *ngFor="let producto of productos">
                 <ion-card>
-                  <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
+                  <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
                   <ion-card-header>
-                    <ion-card-title>Vehiculos Seguros</ion-card-title>
-                    <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
+                    <ion-card-title>{{ producto.nombre }}</ion-card-title>
+                    <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
                   </ion-card-header>
                 </ion-card>
               </div>
