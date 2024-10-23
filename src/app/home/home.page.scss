@@ -1,4 +1,3 @@
-
 /* ----------------------------------------------
  Estilo para el contenido y títulos
  ---------------------------------------------- */
@@ -70,13 +69,12 @@ ion-icon {
  Estilo para la barra de búsqueda
  ---------------------------------------------- */
 .barra-busqueda {
-width: 100%;
-padding: 20px;
+  width: 100%;
+  padding: 20px;
 }
 
 ion-searchbar {
   --border-radius: 93px 93px 93px 93px;
-
 }
 
 /* ----------------------------------------------
@@ -110,6 +108,7 @@ ion-searchbar {
   color: var(--color-letras-iconos);
 }
 
+
 /* ----------------------------------------------
  Estilo para el scroll horizontal
  ---------------------------------------------- */
@@ -131,8 +130,26 @@ ion-searchbar {
  Ajusta el tamaño de las imágenes dentro de las cards
  ---------------------------------------------- */
 ion-card img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Ocupa el 100% del contenedor */
+  max-width: 300px; /* Limita el tamaño máximo */
+  min-width: 150px; /* Limita el tamaño mínimo */
+  height: 200px; /* Establece una altura fija para uniformidad */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  border-radius: 10px; /* Esquinas redondeadas para un mejor diseño */
+}
+.precio {
+  font-size: 1.2rem; /* Ajusta el tamaño de fuente como desees */
+  /* Puedes agregar más estilos específicos si lo necesitas */
+}
+
+/* ----------------------------------------------
+ Ajusta el tamaño de las imágenes de vehículos
+ ---------------------------------------------- */
+.sugerencias-contenedor img {
+  width: 80px; /* Ancho fijo para uniformidad */
+  height: 80px; /* Altura fija para uniformidad */
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+  border-radius: 10%; /* Esquinas redondeadas para un mejor diseño */
 }
 
 /* ----------------------------------------------
@@ -229,18 +246,14 @@ button:hover {
   color: var(--color-letras-iconos);
 }
 
-
 ion-card-title {
-  color:#DEDEDE;
-  
+  color: #DEDEDE;
 }
 
-
 ion-card-subtitle {
-  color:#DEDEDE;
+  color: #DEDEDE;
 }
 
 ion-card-header {
   background-color: #161616;
 }
-
