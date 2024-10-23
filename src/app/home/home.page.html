@@ -58,26 +58,18 @@
         <div class="contenedor-uber-ahorro">
           <div class="scroll-horizontal">
 
-            <div class="elemento" *ngFor="let producto of productos">
-              <ion-card>
-                <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
-                <ion-card-header>
-                  <ion-card-title>{{ producto.nombre }}</ion-card-title>
-                  <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            </div>
-            
-            <div class="elemento">
-              <ion-card>
-                <img alt="Descripción de la imagen" src="assets/img/opciones-viaje.jpg" />
-                <ion-card-header>
-                  <ion-card-title>Vehiculos Seguros</ion-card-title>
-                  <ion-card-subtitle>Vehiculos más seguros, viajes más seguros</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            </div>
-
+            <span *ngFor="let producto of productos">
+              <div class="elemento"  *ngIf="producto.categoria == 'ahorro a diario'">
+                <ion-card>
+                  <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
+                  <ion-card-header>
+                    <ion-card-title>{{ producto.nombre }}</ion-card-title>
+                    <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
+                    <ion-card-subtitle class="precio">${{ producto.precio }}</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+            </span>
           </div>
         </div>
       </div>
@@ -88,26 +80,18 @@
         <div class="contenido-uber-ahorro">
           <div class="contenedor-uber-ahorro">
             <div class="scroll-horizontal">
-              
-              <div class="elemento" *ngFor="let producto of productos">
+              <span *ngFor="let producto of productos">
+              <div class="elemento"  *ngIf="producto.categoria == 'Viajes más simples'">
                 <ion-card>
                   <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
                   <ion-card-header>
                     <ion-card-title>{{ producto.nombre }}</ion-card-title>
                     <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
+                    <ion-card-subtitle class="precio">${{ producto.precio }}</ion-card-subtitle>
                   </ion-card-header>
                 </ion-card>
               </div>
-
-              <div class="elemento" *ngFor="let producto of productos">
-                <ion-card>
-                  <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
-                  <ion-card-header>
-                    <ion-card-title>{{ producto.nombre }}</ion-card-title>
-                    <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
-                  </ion-card-header>
-                </ion-card>
-              </div>
+            </span>
             </div>
           </div>
         </div>
