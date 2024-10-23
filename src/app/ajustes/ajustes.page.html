@@ -10,14 +10,13 @@
   <ion-modal [isOpen]="isModalOpen">
     <ng-template>
      
-        <!-- Campo Nombre -->
-      <ion-item>
+       <!-- Campo Nombre -->
+       <ion-item>
         <ion-input
           label="Nombre"
           labelPlacement="stacked"
           type="text"
-          placeholder="Ingrese su nombre"
-          [(ngModel)]="name"
+          [(ngModel)]="nombre"
         ></ion-input>
       </ion-item>
 
@@ -28,7 +27,7 @@
           labelPlacement="stacked"
           type="text"
           placeholder="Ingrese su apellido"
-          [(ngModel)]="surname"
+          [(ngModel)]="apellido"
         ></ion-input>
       </ion-item>
 
@@ -38,7 +37,6 @@
           label="Correo Electrónico"
           labelPlacement="stacked"
           type="email"
-          placeholder="Ingrese su correo"
           [(ngModel)]="email"
         ></ion-input>
       </ion-item>
@@ -49,7 +47,6 @@
           label="Contraseña"
           labelPlacement="stacked"
           type="password"
-          placeholder="Ingrese su contraseña"
           [(ngModel)]="password"
         ></ion-input>
       </ion-item>
@@ -61,7 +58,7 @@
           labelPlacement="stacked"
           type="text"
           placeholder="Ingrese su dirección"
-          [(ngModel)]="address"
+          [(ngModel)]="direccion"
         ></ion-input>
       </ion-item>
 
@@ -72,9 +69,15 @@
           labelPlacement="stacked"
           type="text"
           placeholder="Ingrese su tarjeta de crédito"
-          [(ngModel)]="creditCard"
+          [(ngModel)]="tarjeta"
         ></ion-input>
       </ion-item>
+
+      <!-- Botones para acciones -->
+      <ion-button expand="block" (click)="confirmar()">Guardar</ion-button>
+      <ion-button expand="block" (click)="cancel()">Cancelar</ion-button>
+
+      
      
     </ng-template>
   </ion-modal>

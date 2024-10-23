@@ -10,12 +10,12 @@ export class AjustesPage {
   @ViewChild(IonModal) modal!: IonModal;
 
   // Variables para los campos
-  name: string = '';
-  surname: string = '';
+  nombre: string = '';
+  apellido: string = '';
   email: string = '';
   password: string = '';
-  address: string = '';
-  creditCard: string = '';
+  direccion: string = '';
+  tarjeta: string = '';
   message: string = '';
 
   // Variable para manejar la apertura y cierre del modal
@@ -31,15 +31,16 @@ export class AjustesPage {
   }
 
   // Función para confirmar y enviar los datos
-  confirm() {
+  confirmar() {
+    this.saveData();
     this.modal.dismiss({
-      name: this.name,
-      surname: this.surname,
+      nombre: this.nombre,
+      apellido: this.apellido,
       email: this.email,
       password: this.password,
-      address: this.address,
-      creditCard: this.creditCard
-    }, 'confirm');
+      direccion: this.direccion,
+      tarjeta: this.tarjeta
+    }, 'confirmar');
   }
 
   // Función que se ejecuta cuando el modal se cierra
@@ -57,24 +58,24 @@ export class AjustesPage {
     if (usuarioGuardado) {
       const usuario = JSON.parse(usuarioGuardado);
       // Si hay datos guardados, rellenar los campos correspondientes
-      this.name = usuario.usuario;
-      this.email = usuario.email;
-      this.password = usuario.password;
-      this.address = usuario.direccion || '';
-      this.surname = usuario.apellido || '';
-      this.creditCard = usuario.tarjetaCredito || '';
+      this.nombre = usuario[0].usuario || '';
+      this.email = usuario.email || '';
+      this.password = usuario.password || '';
+      this.direccion = usuario.direccion || '';
+      this.apellido = usuario.apellido || '';
+      this.tarjeta = usuario.tarjetaCredito || '';
     }
   }
-  
+     
   saveData() {
     // Actualizar el objeto de usuario con los nuevos datos
     const usuarioActualizado = {
-      usuario: this.name,
+      usuario: this.nombre,
       password: this.password,
       email: this.email,
-      direccion: this.address,
-      apellido: this.surname,
-      tarjetaCredito: this.creditCard
+      direccion: this.direccion,
+      apellido: this.apellido,
+      tarjetaCredito: this.tarjeta
     };
   
     // Guardar los datos actualizados en el local storage
