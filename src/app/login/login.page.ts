@@ -27,6 +27,9 @@ export class LoginPage implements OnInit {
     const passwordValido = usuarioValido && usuarioValido.password === this.password;
 
     if (passwordValido) {
+       // Guardar el ID del usuario que inició sesión en el localStorage
+      localStorage.setItem('idUsuarioActual', usuarioValido.id.toString());
+
       this.intentosFallidos = 0;
       this.mostrarRecuperar = false;
       this.mostrarAlerta(`Bienvenido, ${this.usuario}!`, () => {

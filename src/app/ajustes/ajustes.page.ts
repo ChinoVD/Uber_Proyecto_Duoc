@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router'; // Cambié Route a Router
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
@@ -8,6 +9,10 @@ import { OverlayEventDetail } from '@ionic/core/components';
 })
 export class AjustesPage {
   @ViewChild(IonModal) modal!: IonModal;
+
+  constructor(
+    private router: Router // Cambié Route a Router
+  ) {}
 
   // Variables para los campos
   nombre: string = '';
@@ -36,10 +41,7 @@ export class AjustesPage {
     this.modal.dismiss({
       nombre: this.nombre,
       apellido: this.apellido,
-      email: this.email,
-      password: this.password,
-      direccion: this.direccion,
-      tarjeta: this.tarjeta
+      email: this.email
     }, 'confirmar');
   }
 
@@ -47,29 +49,44 @@ export class AjustesPage {
   onWillDismiss(event: Event) {
     const ev = event as CustomEvent<OverlayEventDetail<any>>;
     if (ev.detail.role === 'confirm') {
-      this.message = `Nombre: ${ev.detail.data.name}, Apellido: ${ev.detail.data.surname}, Correo: ${ev.detail.data.email}`;
+      this.message = `Nombre: ${ev.detail.data.nombre}, Apellido: ${ev.detail.data.apellido}, Correo: ${ev.detail.data.email}`;
     }
   }
 
   ngOnInit() {
     // Obtener datos del local storage
     const usuarioGuardado = localStorage.getItem('usuarios');
-    
-    if (usuarioGuardado) {
-      const usuario = JSON.parse(usuarioGuardado);
-      // Si hay datos guardados, rellenar los campos correspondientes
-      this.nombre = usuario[0].usuario || '';
-      this.email = usuario.email || '';
-      this.password = usuario.password || '';
-      this.direccion = usuario.direccion || '';
-      this.apellido = usuario.apellido || '';
-      this.tarjeta = usuario.tarjetaCredito || '';
+    const idUsuarioActual = localStorage.getItem('idUsuarioActual'); // Obtener el ID almacenado
+  
+    if (usuarioGuardado && idUsuarioActual) {
+      const usuarios = JSON.parse(usuarioGuardado); 
+      // Buscar el usuario con el ID correspondiente
+      const usuarioActual = usuarios.find((user: any) => user.id.toString() === idUsuarioActual);
+  
+      if (usuarioActual) {
+        this.nombre = usuarioActual.usuario || '';
+        this.email = usuarioActual.email || '';
+        this.password = usuarioActual.password || '';
+        this.apellido = usuarioActual.apellido || '';
+        this.direccion = usuarioActual.direccion || '';
+        this.tarjeta = usuarioActual.tarjetaCredito || '';
+      } else {
+        console.log("Usuario no encontrado.");
+      }
+    } else {
+      console.log("No hay usuarios guardados o no hay sesión activa.");
     }
   }
-     
+
   saveData() {
+    // Obtener usuarios existentes
+    const usuarioGuardado = localStorage.getItem('usuarios');
+    let usuarios = usuarioGuardado ? JSON.parse(usuarioGuardado) : [];
+
     // Actualizar el objeto de usuario con los nuevos datos
+    const idUsuarioActual = localStorage.getItem('idUsuarioActual');
     const usuarioActualizado = {
+      id: parseInt(idUsuarioActual || '0'), // Asegúrate de tener el ID
       usuario: this.nombre,
       password: this.password,
       email: this.email,
@@ -77,8 +94,25 @@ export class AjustesPage {
       apellido: this.apellido,
       tarjetaCredito: this.tarjeta
     };
+
+    // Buscar y actualizar el usuario
+    const index = usuarios.findIndex((user: any) => user.id.toString() === idUsuarioActual);
+    if (index !== -1) {
+      usuarios[index] = usuarioActualizado; // Actualizar el usuario existente
+    } else {
+      usuarios.push(usuarioActualizado); // Si no existe, agregar como nuevo
+    }
   
     // Guardar los datos actualizados en el local storage
-    localStorage.setItem('usuarios', JSON.stringify(usuarioActualizado));
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  }
+
+  cerrarSesion() {
+    // Limpiar el localStorage para eliminar la sesión
+    localStorage.setItem('idUsuarioActual', '0');
+
+  
+    // Redirigir al login
+    this.router.navigate(['/login']);
   }
 }
