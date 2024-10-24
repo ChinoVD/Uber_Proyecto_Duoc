@@ -2,8 +2,8 @@
   <div class="contenedor">
 
     <div class="inf-usuario">
-      <h1>Admin_uwu</h1>
-      <ion-icon class="usuario-img" src="assets/icon/usuario-img.svg"></ion-icon>
+      <h1>{{ nombre }}</h1> <!-- Aquí se muestra el nombre del usuario -->
+      <ion-icon class="usuario-img" src="assets/icon/usuario-img.svg" (click)=" navegarAjustes()"></ion-icon> 
     </div>
 
     <div class="opciones-usuario">
@@ -65,7 +65,7 @@
 
       <div class="ajustes">
         <div class="ajustes-elementos">
-          <ion-button (click)="navegar()">Ajustes</ion-button> 
+          <ion-button (click)="navegarAjustes()"></ion-button> 
         </div>
       </div>
     </div>
