@@ -129,13 +129,21 @@ ion-searchbar {
 /* ----------------------------------------------
  Ajusta el tamaño de las imágenes dentro de las cards
  ---------------------------------------------- */
-ion-card img {
+ ion-card img {
   width: 100%; /* Ocupa el 100% del contenedor */
   max-width: 300px; /* Limita el tamaño máximo */
   min-width: 150px; /* Limita el tamaño mínimo */
   height: 200px; /* Establece una altura fija para uniformidad */
   object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-  border-radius: 10px; /* Esquinas redondeadas para un mejor diseño */
+  border-radius: 5px; /* Esquinas redondeadas para un mejor diseño */
+  overflow: hidden; /* Oculta cualquier exceso de la imagen */
+  display: block; /* Asegura que la imagen se muestre como un bloque */
+  background-color: transparent; /* Asegura que no haya fondo blanco */
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+ion-card img:hover {
+  transform: scale(1.1); /* Aplica el zoom al pasar el cursor */
 }
 .precio {
   font-size: 1.2rem; /* Ajusta el tamaño de fuente como desees */
