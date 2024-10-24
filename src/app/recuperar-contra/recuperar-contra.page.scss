@@ -1,0 +1,74 @@
+/* ----------------------------------------------
+ Estilo básico del contenido de Recuperar Contraseña
+ ---------------------------------------------- */
+ ion-content {
+    --background: var(--fondo-oscuro); /* Fondo oscuro como en otras páginas */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Pantalla completa */
+  }
+  
+  .contenedor {
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo en pantallas grandes */
+  }
+  
+  .recuperar_contrasena {
+    background-color: var(--fondo-terciario);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todos los elementos dentro del contenedor */
+  }
+  
+  .titulo {
+    font-family: 'UberMoveBold', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-letras-iconos);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* ----------------------------------------------
+   Estilo para los campos de entrada
+   ---------------------------------------------- */
+  .registros {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  ion-input {
+    --background: white; /* Fondo blanco para los campos de entrada */
+    --color: black (--color-letras-iconos); /* Color de texto */
+    font-family: 'UberMoveMedium', sans-serif;
+    border-radius: 5px;
+  }
+  
+  ion-input::part(native) {
+    background-color: var(--fondo-terciario); /* Fondo del input */
+    border-radius: 5px;
+  }
+  
+  /* ----------------------------------------------
+   Estilo para los botones
+   ---------------------------------------------- */
+  ion-button {
+    font-family: 'UberMoveMedium', sans-serif;
+    background-color: var(--fondo-secundario); /* Fondo del botón de enviar */
+    color: var(--color-letras-iconos); /* Color de texto */
+    width: 100%; /* Ancho completo */
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  ion-button[fill="clear"] {
+    background-color: transparent;
+    color: var(--color-letras-iconos);
+  }
+  
+  

@@ -1,0 +1,83 @@
+/* ----------------------------------------------
+ Estilo básico del contenido de view-admin
+ ---------------------------------------------- */
+ ion-content {
+    --background: var(--fondo-oscuro); /* Fondo oscuro como en otras páginas */
+    padding: 20px; /* Añadimos un poco de espacio alrededor del contenido */
+    height: 100vh; /* Se asegura de que el contenido ocupe toda la pantalla */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ----------------------------------------------
+   Estilo para el encabezado (Administrar Productos)
+   ---------------------------------------------- */
+  ion-header {
+    background-color: var(--fondo-secundario); /* Fondo secundario como en otras páginas */
+    color: var(--color-letras-iconos);
+  }
+  
+  ion-title {
+    font-family: 'UberMoveBold', sans-serif; /* Utilizamos UberMoveBold */
+    font-size: 1.5rem; /* Tamaño de fuente similar a otros títulos */
+    text-align: center; /* Alineación centrada */
+    color: black (--color-letras-iconos);
+  }
+  
+  /* ----------------------------------------------
+   Estilo para los botones del menú (Subir, Modificar, Eliminar)
+   ---------------------------------------------- */
+  ion-segment {
+    margin-top: 20px;
+  }
+  
+  ion-segment-button {
+    font-family: 'UberMoveMedium', sans-serif; /* Utilizamos UberMoveMedium */
+    background-color: var(--fondo-terciario); /* Fondo de los botones */
+    color: var(--color-letras-iconos); /* Color de texto */
+    border-radius: 20px; /* Botones redondeados */
+    padding: 10px 20px; /* Espaciado dentro de los botones */
+  }
+  
+  ion-segment-button[selected] {
+    background-color: var(--fondo-secundario); /* Color diferente para el botón seleccionado */
+  }
+  
+  ion-segment-button ion-label {
+    font-size: 0.8rem; /* Ajuste de tamaño de fuente */
+  }
+
+  /* ----------------------------------------------
+   Estilo para el contenido que se debe desplazar
+   ---------------------------------------------- */
+  .contenido-scrollable {
+    flex: 1; /* Ocupa el espacio disponible */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    padding: 10px;
+  }
+  
+  /* ----------------------------------------------
+   Estilo para los productos disponibles (lista)
+   ---------------------------------------------- */
+  .productos-disponibles {
+    background-color: var(--fondo-terciario); /* Fondo de la lista */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ----------------------------------------------
+   Estilo de texto para los productos
+   ---------------------------------------------- */
+  .productos-disponibles h2 {
+    font-size: 1.2rem; /* Ajuste del tamaño del título */
+    color: var(--color-letras-iconos); /* Color del texto */
+  }
+
+  .productos-disponibles p {
+    font-size: 1rem;
+    color: var(--color-letras-iconos);
+  }
+

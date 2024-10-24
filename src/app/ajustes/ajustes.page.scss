@@ -1,28 +1,80 @@
-.contenedor {
-    padding: 16px; /* Ajusta el espaciado */
-    background-color: var(--fondo-secundario); /* Fondo específico */
-  }
-  
-  .titulo {
-    text-align: center; /* Centrar el texto */
-    margin: 20px; /* Espaciado inferior */
-    color: var(--color-letras-iconos); /* Color del texto */
-  }
-  
-  .tarjeta {
-    background-color: var(--fondo-terciario); /* Fondo de la tarjeta */
-    padding: 16px; /* Espaciado interno */
-    border-radius: 10px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
-  }
-  
-  .tarjeta-titulo {
-    font-family: 'UberMoveBold'; /* Fuente del título */
-    color: var(--color-letras-iconos); /* Color del texto */
-    margin-bottom: 10px; /* Espaciado inferior */
-  }
-  
-  ion-button {
-    margin: 8px 0; /* Espaciado vertical entre botones */
-  }
-  
+/* ----------------------------------------------
+ Estilo básico del contenido de ajustes
+ ---------------------------------------------- */
+ ion-content {
+  --background: var(--fondo-oscuro); /* Fondo oscuro como en otras páginas */
+  padding: 20px; /* Añadimos un poco de espacio alrededor del contenido */
+  height: 100vh; /* Se asegura de que el contenido ocupe toda la pantalla */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------------------------------------
+ Estilo para el encabezado (Ajustes)
+ ---------------------------------------------- */
+.titulo h1 {
+  font-family: 'UberMoveBold', sans-serif; /* Utilizamos UberMoveBold */
+  font-size: 1.5rem; /* Tamaño de fuente similar a otros títulos */
+  text-align: center; /* Alineación centrada */
+  color: var(--color-letras-iconos); /* Color de texto */
+  background-color: var(--fondo-secundario); /* Fondo secundario */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* ----------------------------------------------
+ Estilo para los botones y la tarjeta de ajustes
+ ---------------------------------------------- */
+.contenido_principal ion-button {
+  font-family: 'UberMoveMedium', sans-serif; /* Utilizamos UberMoveMedium */
+  background-color: var(--fondo-terciario); /* Fondo de los botones */
+  color: var(--color-letras-iconos); /* Color de texto */
+  border-radius: 20px; /* Botones redondeados */
+  padding: 10px 20px; /* Espaciado dentro de los botones */
+  margin: 10px 0;
+}
+
+/* Botón expandido seleccionado */
+.contenido_principal ion-button[selected] {
+  background-color: var(--fondo-secundario); /* Color diferente para el botón seleccionado */
+}
+
+.tarjeta {
+  background-color: var(--fondo-terciario); /* Fondo de la tarjeta */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+}
+
+.tarjeta h2 {
+  font-family: 'UberMoveBold', sans-serif; /* Fuente del título */
+  color: var(--color-letras-iconos); /* Color del texto */
+  margin-bottom: 15px;
+}
+
+/* ----------------------------------------------
+ Estilo para los campos de entrada de la tarjeta
+ ---------------------------------------------- */
+ion-item {
+  --background: var(--fondo-oscuro); /* Fondo oscuro en los ítems */
+  margin: 10px 0;
+}
+
+ion-input {
+  font-family: 'UberMoveMedium', sans-serif; /* Utilizamos UberMoveMedium */
+  color: var(--color-letras-iconos); /* Color del texto */
+}
+
+ion-input::part(native) {
+  background-color: var(--fondo-terciario); /* Fondo del input */
+  border-radius: 5px;
+}
+
+/* ----------------------------------------------
+ Estilo para el contenido que se debe desplazar
+ ---------------------------------------------- */
+.contenido-scrollable {
+  flex: 1; /* Ocupa el espacio disponible */
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  padding: 10px;
+}
