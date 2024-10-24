@@ -8,11 +8,11 @@
 
     <div class="calabazauwu">
       <ion-icon class="calabaza" src="assets/icon/calabaza.svg" (click)="mostrarImagen()"></ion-icon>
-      <ion-icon id="fantasma1" class="fantasma" src="assets/icon/fantasma.svg"></ion-icon>
-      <ion-icon id="fantasma2" class="fantasma" src="assets/icon/fantasma.svg"></ion-icon>
-      <ion-icon id="fantasma3" class="fantasma" src="assets/icon/fantasma.svg"></ion-icon>
+      <ion-icon id="fantasma1" class="fantasma" [ngClass]="{'mostrar-fantasma': imagenVisible}" src="assets/icon/fantasma.svg"></ion-icon>
+      <ion-icon id="fantasma2" class="fantasma" [ngClass]="{'mostrar-fantasma': imagenVisible}" src="assets/icon/fantasma.svg"></ion-icon>
+      <ion-icon id="fantasma3" class="fantasma" [ngClass]="{'mostrar-fantasma': imagenVisible}" src="assets/icon/fantasma.svg"></ion-icon>
+
       
-      <ion-icon id="fantasma" class="imagen-container fantasma" src="assets/icon/fantasma.svg" *ngIf="imagenVisible"></ion-icon>
     </div>
 
     <div class="servicios-disponibles">

@@ -134,9 +134,9 @@ ion-content {
   }
   
   .calabazauwu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Asegúrese de que esto esté configurado */
+    justify-content: center; /* Esto alinea los íconos al centro */
+    align-items: center; /* Esto alinea verticalmente */
   }
   
   .calabaza {
@@ -154,8 +154,12 @@ ion-content {
   
   .fantasma {
     position: absolute;
-    width: 50px; 
-    height: 50px; 
+    margin: 0; /* Asegúrese de que no haya márgenes innecesarios */
+    padding: 0; /* Asegúrese de que no haya relleno */
+    opacity: 0;
+    transform: translateY(100px); /* Posición inicial */
+    transition: opacity 0.5s ease-out, transform 2s ease-in-out;
+    font-size: 4rem;
   }
   
   #fantasma1 {
@@ -171,5 +175,9 @@ ion-content {
   #fantasma3 {
     right: 10%;
     bottom: 0;
+  }
+  .mostrar-fantasma {
+    opacity: 1; /* Hacer visible el fantasma */
+    transform: translateY(0); /* Mover a la posición visible */
   }
   
